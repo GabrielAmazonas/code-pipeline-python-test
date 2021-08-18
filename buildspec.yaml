@@ -15,16 +15,16 @@ phases:
       - python -m pytest tests/ -v
   build:
     commands:
-      - echo "[+] Installing dependencies...."
-      - pip install -r requirements.txt -t hello_world/build/
-      - cp hello_world/*.py hello_world/build/
-      - echo "Done with the simple pipeline, now you coud run a cloudformation code, for example"
+      # - echo "[+] Installing dependencies...."
+      #- pip install -r requirements.txt -t hello_world/build/
+      #- cp hello_world/*.py hello_world/build/
+      - echo "We don't need a build stage in glues cases, we want to work with a docker build"
       - echo "Deploying the python file to a s3 bucket"
       # - aws cloudformation package --template-file template.yaml --s3-bucket $BUILD_OUTPUT_BUCKET --output-template-file packaged.yaml
   post_build:
     commands:
       - echo "Pipeline completed, trying to copy file to s3"
-      - aws s3 cp hello_world/build/app.py s3://glue-etl-bucket-650180341287/app.py
+      - aws s3 cp hello_world/app.py s3://glue-etl-bucket-650180341287/app.py
 
 #artifacts:
 #  files:
