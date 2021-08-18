@@ -20,7 +20,7 @@ phases:
       - cp hello_world/*.py hello_world/build/
       - echo "Done with the simple pipeline, now you coud run a cloudformation code, for example"
       - echo "Deploying the python file to a s3 bucket"
-      - aws s3 cp hello_world/build/app.py s3:/glue-etl-bucket-650180341287/app.py
+      - aws s3 cp hello_world/build/app.py s3://glue-etl-bucket-650180341287/app.py
       # - aws cloudformation package --template-file template.yaml --s3-bucket $BUILD_OUTPUT_BUCKET --output-template-file packaged.yaml
   post_build:
     commands:
