@@ -26,9 +26,9 @@ phases:
       - echo "Pipeline completed, trying to copy file to s3"
       - aws s3 cp hello_world/app.py s3://glue-etl-bucket-650180341287/app.py
 
-#artifacts:
-#  files:
-#    - packaged.yaml
+artifacts:
+  files:
+    - hello_world/app.py
 # discard-paths: yes
 
 cache:
