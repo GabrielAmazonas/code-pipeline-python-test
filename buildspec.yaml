@@ -24,10 +24,10 @@ phases:
     commands:
       - echo "Pipeline completed"
 
-artifacts:
-  files:
-    - packaged.yaml
-  discard-paths: yes
+#artifacts:
+#  files:
+#    - packaged.yaml
+# discard-paths: yes
 
 cache:
   paths:
